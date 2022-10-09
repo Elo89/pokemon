@@ -26,7 +26,6 @@ export const usePokemonList = (): usePokemonListType => {
 
   const fetchPokemons = useCallback(async () => {
     setIsLoading(true);
-    // ?limit=100000&offset=0
     const data: PokemonResponse = await fetch(`${api}/pokemon`)
       .then((data) => {
         return data.json();
