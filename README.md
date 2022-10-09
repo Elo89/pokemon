@@ -1,9 +1,9 @@
-## Pokemon
+# Pokemon
 
-install
+Install library
 
-# yarn
+### yarn
 
-start
+start project
 
-# yarn start
+### yarn start
