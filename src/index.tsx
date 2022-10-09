@@ -1,15 +1,14 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client';
 import App from './App';
 import { PokemonDetailsContext, PokemonListContext } from './context/contexts';
 import usePokemonList from './hooks/usePokemonList';
 import ReusableProvider from './context/ReusableContext';
 import reportWebVitals from './reportWebVitals';
 import usePokemonDetails from './hooks/usePokemonDetails';
+import { createRoot } from 'react-dom/client';
 
-const root = ReactDOM.createRoot(
-  document.getElementById('root') as HTMLElement
-);
+const container = document.getElementById('root');
+const root = createRoot(container!);
 
 root.render(
   <React.StrictMode>

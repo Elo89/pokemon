@@ -15,11 +15,11 @@ function Home() {
 
   const goToPokemon = useCallback((pokemon: any) => () => {
     navigate(`/${pokemon.name}`)
-  }, [])
+  }, [navigate])
 
   useEffect(() => {
     fetchPokemons();
-  }, [])
+  }, [fetchPokemons])
 
   return (
     <Flex

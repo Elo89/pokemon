@@ -8,7 +8,7 @@ import {
 } from "react-router-dom";
 import Header from './design-system/Header';
 
-function App({}: any) {
+function App() {
   return (
     <ThemeProvider>
       <Header />

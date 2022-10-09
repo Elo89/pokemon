@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import uniq from "lodash/uniq";
 import { PokemonType } from "./usePokemonDetails";
 
@@ -36,22 +36,22 @@ export const usePokemonFilters = ({ data, filtersIsActive }: { data?: PokemonTyp
 
   const removePokemonCaught = (name: string) => {
     const n = pokemonsCaught.filter(e => e !== name)
-    setPokemonsCaught(n);
-    localStorage.setItem('pokemonsCaught', JSON.stringify(n))
+    setPokemonsCaught(n || []);
+    localStorage.setItem('pokemonsCaught', JSON.stringify(n || []))
   }
 
-  const fCaught = (data: PokemonType[]) => 
+  const fCaught = useCallback((data: PokemonType[]) => 
     data.filter(({ name }: any) =>
       pokemonsCaught.includes(name)
-    )
+    ), [pokemonsCaught]);
   
-  const fNotCaught = (data: PokemonType[]) => 
+  const fNotCaught = useCallback((data: PokemonType[]) => 
     data.filter(({ name }: any) =>
       !pokemonsCaught.includes(name)
-    )
+    ), [pokemonsCaught]);
 
   useEffect(() => {
-    if(filtersIsActive && data) {
+    if(filtersIsActive && data) {      
       if (filter === filterType.ALL) {
         setPokemonsfiltered(data)
       }
@@ -64,7 +64,15 @@ export const usePokemonFilters = ({ data, filtersIsActive }: { data?: PokemonTyp
         setPokemonsfiltered(filtered);
       }
     }
-  }, [filter, data, filtersIsActive, pokemonsCaught])
+  }, [
+    filter,
+    data,
+    filtersIsActive,
+    fCaught,
+    fNotCaught,
+    setPokemonsfiltered,
+    pokemonsCaught,
+  ])
 
   useEffect(() => {
     if(localStorage.getItem('pokemonsCaught')) {

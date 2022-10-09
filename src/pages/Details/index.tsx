@@ -18,11 +18,11 @@ function Details() {
     if (params.name) {
       fetchPokemon(params.name as string);
     }
-  }, [params.name]);
+  }, [params.name, fetchPokemon]);
 
   const goBack = useCallback(() => {
     navigate(`/`)
-  }, [])
+  }, [navigate])
 
   const isCaught = pokemonsCaught.includes(pokemon?.name);
 
