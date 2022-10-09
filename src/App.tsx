@@ -15,8 +15,6 @@ function App({}: any) {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />} />
-        </Routes>
-        <Routes>
           <Route path="/:name" element={<Details />} />
         </Routes>
       </BrowserRouter>
