@@ -36,7 +36,7 @@ export const usePokemonList = (): usePokemonListType => {
   }, [])
 
   return {
-    pokemons: pokemons?.results,
+    pokemons: pokemons?.results || [],
     isLoading,
     fetchPokemons,
   };

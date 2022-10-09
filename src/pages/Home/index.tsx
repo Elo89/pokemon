@@ -31,7 +31,7 @@ function Home() {
       <Filters setFilters={setFilters} filter={filter} />
 
       {isLoading &&
-        <Text1>
+        <Text1 data-testid="loading">
           loading...
         </Text1>
       }
@@ -48,6 +48,7 @@ function Home() {
               mb={2}
               borderRadius={20}
               display={['block', 'flex']}
+              data-testid={`pokemon-${pokemon.name.replace(' ', '_')}`}
             >
               <PokemonName
                 color={!isCaught ? "secondary" : "primary"}
