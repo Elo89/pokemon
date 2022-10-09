@@ -40,8 +40,18 @@ function Details() {
           </Button>
         </Flex>
 
-        <Flex justifyContent="space-between" pb={4} order={[1, 2]} flex={['0 0 100%', 'auto']} >
-          <PokemonName color="secondary" textAlign={['center']} width="100%">
+        <Flex
+          justifyContent="space-between"
+          pb={4}
+          order={[1, 2]}
+          flex={['0 0 100%', 'auto']}
+        >
+          <PokemonName 
+            as="h1"
+            color="secondary"
+            textAlign={['center']}
+            width="100%"
+          >
             {(params?.name || '').toUpperCase()}
           </PokemonName>
         </Flex>
