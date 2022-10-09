@@ -1,8 +1,8 @@
 import { useCallback, useContext, useEffect } from 'react';
 import { PokemonListContext } from '../../context/contexts';
 import Button from '../../design-system/Button';
-import { Flex } from '../../design-system/Styled';
-import { PokemonName, Text1, Title } from '../../design-system/Typography';
+import { Div, Flex } from '../../design-system/Styled';
+import { PokemonName, Text1 } from '../../design-system/Typography';
 import { useNavigate } from "react-router-dom";
 import usePokemonFilters from '../../hooks/usePokemonFilters';
 import Filters from './Filters';
@@ -30,54 +30,52 @@ function Home() {
     >
       <Filters setFilters={setFilters} filter={filter} />
 
-      <Title mb={4}>
-        Lista Pokemon
-      </Title>
-
       {isLoading &&
         <Text1>
           loading...
         </Text1>
       }
 
-      {!isLoading && data?.map((pokemon) => {
-        const isCaught = pokemonsCaught.includes(pokemon.name);
-        return (
-          <Flex
-            key={pokemon.name.replace(' ', '_')}
-            justifyContent="space-between"
-            bg={isCaught ? "secondary" : "primary"}
-            p={4}
-            mb={2}
-            borderRadius={20}
-            display={['block', 'flex']}
-          >
-            <PokemonName
-              color={!isCaught ? "secondary" : "primary"}
-              textAlign={['center', 'left']}
-              textShadow={isCaught ? `0 4px #999` : `0 4px black`}
-            >
-              {pokemon.name.toUpperCase()}
-            </PokemonName>
-
+      <Div mt={4}>
+        {!isLoading && data?.map((pokemon) => {
+          const isCaught = pokemonsCaught.includes(pokemon.name);
+          return (
             <Flex
-              mt={[4, 0]}
-              justifyContent={['center', 'start']}
+              key={pokemon.name.replace(' ', '_')}
+              justifyContent="space-between"
+              bg={isCaught ? "secondary" : "primary"}
+              p={4}
+              mb={2}
+              borderRadius={20}
+              display={['block', 'flex']}
             >
-              <CaughtButton
-                addPokemonCaught={addPokemonCaught}
-                removePokemonCaught={removePokemonCaught}
-                isCaught={isCaught}
-                name={pokemon.name}
-                mr={2} />
-              <Button onClick={goToPokemon(pokemon)}>
-                Visualizza
-              </Button>
+              <PokemonName
+                color={!isCaught ? "secondary" : "primary"}
+                textAlign={['center', 'left']}
+                textShadow={isCaught ? `0 4px #999` : `0 4px black`}
+              >
+                {pokemon.name.toUpperCase()}
+              </PokemonName>
+
+              <Flex
+                mt={[4, 0]}
+                justifyContent={['center', 'start']}
+              >
+                <CaughtButton
+                  addPokemonCaught={addPokemonCaught}
+                  removePokemonCaught={removePokemonCaught}
+                  isCaught={isCaught}
+                  name={pokemon.name}
+                  mr={2} />
+                <Button onClick={goToPokemon(pokemon)}>
+                  Visualizza
+                </Button>
+              </Flex>
             </Flex>
-          </Flex>
-        )
-      }
-      )}
+          )
+        })}
+      </Div>
+
     </Flex>
   );
 }

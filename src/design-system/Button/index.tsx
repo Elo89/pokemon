@@ -37,8 +37,14 @@ interface ButtonComponentDto
 }
 
 const ButtonStyled = styled.button<ButtonComponentDto>`
+  font-family: 'Greback Grotesque Fat', sans-serif;
+  text-edge: cap alphabetic;
+  leading-trim: both;
   text-transform: uppercase;
-  padding: ${({ theme }) => theme.space[4]};
+  padding-top: ${({ theme }) => theme.space[3]};
+  padding-bottom: ${({ theme }) => theme.space[2]};
+  padding-left: ${({ theme }) => theme.space[4]};
+  padding-right: ${({ theme }) => theme.space[4]};
   cursor: pointer;
   ${fluid(position)}
   ${fluid(color)}
@@ -104,7 +110,6 @@ const Button = ({
 
   return (
     <Btn
-      height="50px"
       display="flex"
       alignItems="center"
       justifyContent="center"

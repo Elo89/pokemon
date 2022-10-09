@@ -10,8 +10,12 @@ const styles = css`
   }
 
   body {
-    font-family: 'Gotham Black', cursive;
+    font-family: 'Greback Grotesque Medium', sans-serif;
     font-size: 10px;
+  }
+
+  b {
+    font-family: 'Greback Grotesque Fat', sans-serif;
   }
 `
 

@@ -21,14 +21,14 @@ const Description = ({
     <Div>
       <Text1 color="white">
         Altezza:{" "}
-        <Text1 as="b" fontWeight="bold">
+        <Text1 as="b">
           {heightpok * 10} cm.
         </Text1>
       </Text1>
 
       <Text1 color="white">
         Peso:{" "}
-        <Text1 as="b" fontWeight="bold">
+        <Text1 as="b">
           {weightpok * 0.1} kg
         </Text1>
       </Text1>
@@ -37,42 +37,42 @@ const Description = ({
 
       <Text1 color="white">
         {pokstat1}{": "}
-        <Text1 as="b" fontWeight="bold">
+        <Text1 as="b">
           {posbs1}
         </Text1>
       </Text1>
 
       <Text1 color="white">
         {pokstat2}{": "}
-        <Text1 as="b" fontWeight="bold">
+        <Text1 as="b">
           {posbs2}
         </Text1>
       </Text1>
 
       <Text1 color="white">
         {pokstat3}{": "}
-        <Text1 as="b" fontWeight="bold">
+        <Text1 as="b">
           {posbs3}
         </Text1>
       </Text1>
 
       <Text1 color="white">
         {pokstat4}{": "}
-        <Text1 as="b" fontWeight="bold">
+        <Text1 as="b">
           {posbs4}
         </Text1>
       </Text1>
 
       <Text1 color="white">
         {pokstat5}{": "}
-        <Text1 as="b" fontWeight="bold">
+        <Text1 as="b">
           {posbs5}
         </Text1>
       </Text1>
       
       <Text1 color="white">
         {pokstat6}{": "}
-        <Text1 as="b" fontWeight="bold">
+        <Text1 as="b">
           {posbs6}
         </Text1>
       </Text1>

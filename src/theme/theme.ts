@@ -67,8 +67,8 @@ declare module '@emotion/react' {
 
 export const theme = {
   colors: {
-    primary: 'blue',
-    secondary: '#e5b400',
+    primary: '#2a75bb',
+    secondary: '#ffcb05',
     highlight: '#cc3680',
     error: '#CA7883',
     success: '#76A653',

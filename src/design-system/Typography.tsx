@@ -33,14 +33,6 @@ export const Text: FC<any> = styled.p`
   ${fluid(shadow)}
 `;
 
-export const Title: FC<TypographyComponentDto> = styled(Text)``;
-Title.defaultProps = { 
-  as: 'h1',
-  fontSize: '3rem',
-  lineHeight: '3rem',
-  mt: '8px',
-};
-
 export const PokemonName: FC<TypographyComponentDto> = styled(Text)``;
 
 PokemonName.defaultProps = {

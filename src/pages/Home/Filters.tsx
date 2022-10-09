@@ -12,7 +12,6 @@ function Filters({ setFilters, filter }: any) {
     <Flex>
       <Button 
         fontSize={'xs'}
-        height={30}
         type={filter != filterType.ALL ? 'secondary' : 'primary'}
         onClick={() => setFilters(filterType.ALL)}
         mr={2}
@@ -21,7 +20,6 @@ function Filters({ setFilters, filter }: any) {
       </Button>
       <Button 
         fontSize={'xs'}
-        height={30}
         type={filter != filterType.CAUGHT ? 'secondary' : 'primary'}
         onClick={() => setFilters(filterType.CAUGHT)}
         mr={2}
@@ -30,7 +28,6 @@ function Filters({ setFilters, filter }: any) {
       </Button>
       <Button
         fontSize={'xs'}
-        height={30}
         type={filter != filterType.NOTCAUGHT ? 'secondary' : 'primary'}
         onClick={() => setFilters(filterType.NOTCAUGHT)}
         mr={2}
